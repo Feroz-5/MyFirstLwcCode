@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="FilteringAndSorting">
+        <div class="slds-p-around_medium">
+            <lightning-layout>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-input label="Sorting" type="submit" onkeyup={handleFilter}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-combobox label="Filter" name="filterBy" value={filterBy} options={FilterByValue}
+                        onchange={handle}></lightning-combobox>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="2" allignment-bump="left" padding="around-small">
+                    <lightning-combobox label="SortYourData" name="sortBy" value={sortBy} options={FilterByValue}
+                        onchange={callSort}></lightning-combobox>
+                </lightning-layout-item>
+            </lightning-layout>
+            <table>
+                <thead>
+                    <tr>
+                        <template for:each={heading} for:item="head">
+                            <th key={head}>{head}</th>
+                        </template>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <template for:each={filterData} for:item="filter">
+                        <tr key={filter.Id}>
+                            <td>{filter.Id}</td>
+                            <td>{filter.Name}</td>
+                            <td>{filter.Email}</td>
+                            <td>{filter.Title}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>
