@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="GetWireWithoutCoding">
+        <div class="slds-p-around_small">
+            <lightning-input label="AccountName" name="aname" value={aname} onchange={handleName}></lightning-input>
+        </div>
+        <div class="slds-p-around_small">
+            <lightning-input label="AccountRating" name="arate" value={arate} onchange={handleRate}></lightning-input>
+        </div>
+        <div class="slds-p-around_small">
+            <lightning-button label="Update" varient="brand" onclick={handleSubmit}></lightning-button>
+        </div>
+        <div>
+            <lightning-button label="Delete" variant="Destructive" onclick={handleDelete}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
